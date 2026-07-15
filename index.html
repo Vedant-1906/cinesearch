@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSearch | Hand-Crafted Movie Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🍿</span> CineSearch
+        </div>
+        <div class="nav-links">
+            <a href="https://github.com" target="_blank" class="github-btn"><i class="fa-brands fa-github"></i> Star on GitHub</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Interactive Hero Section -->
+        <section class="hero">
+            <span class="badge">Built with Vanilla JS & WikiAPI</span>
+            <h1>What are we watching <br><span class="gradient-text">tonight?</span></h1>
+            <p>Search any Indian blockbuster, global series, or cult classic. We'll pull the Wikipedia synopsis and the lead cast instantly.</p>
+            
+            <form id="search-form" class="search-form">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Type a movie, show, director or actor..." required autocomplete="off">
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Find Movie</button>
+                    <button type="button" id="random-btn" class="btn btn-secondary" title="Surprise Me!">
+                        <span class="dice-icon">🎲</span> Surprise Me
+                    </button>
+                </div>
+            </form>
+
+            <!-- Human Touch: Clickable Quick Searches -->
+            <div class="trending-shortcuts">
+                <span>Try searching:</span>
+                <button class="shortcut-tag" data-query="3 Idiots">3 Idiots</button>
+                <button class="shortcut-tag" data-query="Mirzapur">Mirzapur</button>
+                <button class="shortcut-tag" data-query="Kalki 2898 AD">Kalki 2898 AD</button>
+                <button class="shortcut-tag" data-query="Satyajit Ray">Satyajit Ray</button>
+            </div>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div id="loader" class="loader hidden"></div>
+
+        <!-- Dynamic Results Section -->
+        <section id="results-grid" class="results-grid"></section>
+    </main>
+
+    <!-- Dev Signature Footer -->
+    <footer>
+        <p>Made with ☕ and JavaScript by <span class="author">Vedant Trimbakkar</span></p>
+        <p class="api-note">Powered by open-source data from Wikipedia</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
